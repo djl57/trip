@@ -1,0 +1,42 @@
+<view class="home">
+  <head id="head"/>
+  <view class="weui-cells__title">目的地：</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+      <input class="weui-input" auto-focus placeholder-style="{{placeholderStyle}}" placeholder="{{placeholder}}" value="{{destination}}" bindinput="bindDestinationChage" />
+    </view>
+  </view>
+
+  <view class="weui-cells__title">出发日期：</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__bd">
+        <picker mode="date" value="{{startDate}}" start="2016-01-01" end="2030-01-01" bindchange="bindStartDateChange">
+          <view class="weui-input">{{startDate}}</view>
+        </picker>
+      </view>
+    </view>
+  </view>
+
+  <view class="weui-cells__title">返回日期：</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__bd">
+        <picker mode="date" value="{{endDate}}" start="2016-01-01" end="2030-01-01" bindchange="bindEndDateChange">
+          <view class="weui-input">{{endDate}}</view>
+        </picker>
+      </view>
+    </view>
+  </view>
+
+  <view class="weui-cells__title">人数：</view>
+  <view class="weui-cells weui-cells_after-title">
+    <view class="weui-cell weui-cell_input">
+      <input class="weui-input" type="number" placeholder="例如：2（只能输入数字）" value="{{peoNum}}" bindinput="bindPeoNumChage" />
+    </view>
+  </view>
+
+  <view class="button">
+    <button bindtap="gotoPlan" type='primary'>确定</button>
+  </view>
+</view>

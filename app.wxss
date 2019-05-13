@@ -1,0 +1,11 @@
+@import 'style/weui.wxss';
+
+input {
+  width: 100%;
+}
+
+.border-5px {
+  height: 5px;
+  width: 100%;
+  background-color: #f6f6f6;
+}

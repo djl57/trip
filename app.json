@@ -1,0 +1,16 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/home/home",
+    "pages/nav/nav",
+    "pages/plan/plan",
+    "pages/on/on",
+    "pages/done/done"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "在路上",
+    "navigationBarTextStyle": "black"
+  }
+}

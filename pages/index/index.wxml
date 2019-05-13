@@ -1,0 +1,15 @@
+<view class="index">
+  <view class='img-view'>
+    <image src="{{ src }}" class='img' mode="scaleToFill"></image>
+  </view>
+
+  <view class='shape'></view>
+
+  <view class='wrap'>
+    <text class='title'>新的旅程</text>
+    <view class='button' bindtap='start'>
+      <view class="round"></view>
+    </view>
+    <!-- <button open-type="getUserInfo" bindgetuserinfo="getUserInfo">开始</button> -->
+  </view>
+</view>

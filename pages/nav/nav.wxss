@@ -1,0 +1,11 @@
+.nav {
+  transform: translateY(100%);
+}
+
+.button {
+  margin: 50px 50px 0;
+}
+
+.button2 {
+  margin: 20px 50px 0;
+}

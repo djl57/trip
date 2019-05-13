@@ -1,0 +1,76 @@
+<view class="plan">
+  <view class='img-view'>
+    <image src='../../assets/images/trip02.jpg' class='img' mode="widthFix"></image>
+  </view>
+  <view class='shape'></view>
+  <view class='header'>
+    <view class='line'>
+      <text class='hd'>目的地： </text>
+      <text class='bd'>{{destination}}</text>
+    </view>
+    <view class='line'>
+      <text class='hd'>天数： </text>
+      <text class='bd'>{{dayNum}} 天</text>
+    </view>
+    <view class='line'>
+      <text class='hd'>人数： </text>
+      <text class='bd'>{{peoNum}} 人</text>
+    </view>
+    <view class='line'>
+      <text class='hd'>预算： </text>
+      <text class='bd'>￥ {{budget}} </text>
+    </view>
+    <view class='line'>
+      <text class='hd'>人均： </text>
+      <text class='bd'>￥ {{perCapita}} </text>
+    </view>
+    <view class='back' bindtap="back">
+      <text>返回</text>
+    </view>
+  </view>
+  <view class='nav'>
+    <view wx:for="{{navs}}" wx:for-index="idx" wx:for-item="nav" class="{{idx===curNav?'nav-active':'nav-no-active'}}" wx:key="{{idx}}" bindtap="changeNav" data-index='{{idx}}'>{{nav.date}}</view>
+  </view>
+  <view class='main'>
+    <view class='item-box' wx:for="{{plans}}" wx:for-index="idx" wx:for-item="plan" wx:key="{{idx}}">
+      <view class='item-hd item'>
+        <view class='item-lf'>行程： </view>
+        <view class='item-input {{editIndex === idx && editNavIndex === plan.curNav?"input-edit":""}}'>
+          <input value='{{plan.title}}' id="title" disabled="{{editIndex !== idx && editNavIndex !== plan.curNav}}" placeholder='例如：出发' bindinput="inputChange" data-index="{{idx}}"></input>
+        </view>
+      </view>
+      <view class='item'>
+        <view class='item-lf'>出发时间： </view>
+        <view class='item-input {{editIndex === idx && editNavIndex === plan.curNav?"input-edit":""}}'>
+          <input value='{{plan.startTime}}' id="startTime" disabled="{{editIndex !== idx && editNavIndex !== plan.curNav}}" placeholder='例如：上午8点' bindinput="inputChange" data-index="{{idx}}"></input>
+        </view>
+      </view>
+      <view class='item'>
+        <view class='item-lf'>出行方式： </view>
+        <view class='item-input {{editIndex === idx && editNavIndex === plan.curNav?"input-edit":""}}'>
+          <input value='{{plan.tripMode}}' id="tripMode" disabled="{{editIndex !== idx && editNavIndex !== plan.curNav}}" placeholder='例如：长途汽车' bindinput="inputChange" data-index="{{idx}}"></input>
+        </view>
+      </view>
+      <view class='item'>
+        <view class='item-lf'>费用估计：￥</view>
+        <view class='item-input {{editIndex === idx && editNavIndex === plan.curNav?"input-edit":""}}'>
+          <input value='{{plan.budget}}' id="budget" disabled="{{editIndex !== idx && editNavIndex !== plan.curNav}}" placeholder='例如：100' bindinput="inputChange" data-index="{{idx}}"></input>
+        </view>
+      </view>
+      <view class='item'>
+        <view class='item-lf'>计划用时： </view>
+        <view class='item-input {{editIndex === idx && editNavIndex === plan.curNav?"input-edit":""}}'>
+          <input value='{{plan.takeTime}}' id="takeTime" disabled="{{editIndex !== idx && editNavIndex !== plan.curNav}}" placeholder='例如：2h' bindinput="inputChange" data-index="{{idx}}"></input>
+        </view>
+      </view>
+      <view wx:if="{{done}}"></view>
+      <button class='button button-edit' bindtap='savePlan' data-index="{{idx}}" wx:elif="{{isAdd}}">确定添加</button>
+      <button class='button button-edit' bindtap='conformEditPlan' data-index="{{idx}}" wx:elif="{{editIndex === idx && editNavIndex === plan.curNav}}">确定</button>
+      <button class='button button-edit' bindtap='editPlan' data-index="{{idx}}" wx:else>重新编辑</button>
+      <button class='button button-del' bindtap='delPlan' data-id="{{plan._id}}" wx:if="{{!done}}">删除行程</button>
+    </view>
+    <view class='item-add-box' wx:if="{{!done}}">
+      <button class='button' bindtap='addPlan'>添加行程</button>
+    </view>
+  </view>
+</view>

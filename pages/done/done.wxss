@@ -1,0 +1,20 @@
+.on {
+  background-color: #f6f6f6;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 5px;
+  font-size: 14px;
+}
+
+.list {
+  margin: 10px 15px 0;
+  background-color: #fff;
+  padding: 15px;
+  color: #888;
+  position: relative;
+}
+
+.nothasdata {
+  text-align: center;
+  color: #888;
+}

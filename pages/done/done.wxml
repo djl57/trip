@@ -1,0 +1,15 @@
+<view class="on">
+  <head id="head"/>
+  <view wx-if="{{lists.length !== 0}}">
+    <view wx:for="{{lists}}" wx:for-index="idx" class='list' wx:for-item="list" wx:key="{{idx}}" bindtap='gotoPlan' data-id='{{list._id}}'>
+      <view>目的地： {{list.destination}}</view>
+      <view>出发日期： {{list.startDate}}</view>
+      <view>返回日期： {{list.endDate}}</view>
+      <view>人数： {{list.peoNum}}人</view>
+    </view>
+  </view>
+
+  <view wx:else class='nothasdata'>
+    暂无数据
+  </view>
+</view>

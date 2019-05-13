@@ -1,0 +1,13 @@
+<view class="nav">
+  <view class="button">
+    <button bindtap="gotoHome" type='primary'>新建旅程</button>
+  </view>
+
+  <view class="button2">
+    <button bindtap="gotoOn" type='default'>进行中旅程</button>
+  </view>
+
+  <view class="button2">
+    <button bindtap="gotoHistory" type='default'>已完成旅程</button>
+  </view>
+</view>

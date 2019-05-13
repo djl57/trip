@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "head": "../../component/head/head"
+  },
+  "navigationBarTitleText": "神仙快乐水"
+}
